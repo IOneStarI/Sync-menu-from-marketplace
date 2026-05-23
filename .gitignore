@@ -5,8 +5,11 @@ node_modules/
 dist/
 coverage/
 npm-debug.log*
+logs/
+rollback/
 
 # Generated importer outputs.
 *-payload*.json
 clear-menu-payload*.json
 choice-payload*.json
+ai-menu-plan*.json

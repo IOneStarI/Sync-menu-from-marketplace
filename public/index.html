@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Sync</title>
+    <link rel="stylesheet" href="/styles.css?v=20260524-2">
+  </head>
+  <body>
+    <main class="app-shell">
+
+      <header class="hero-banner">
+        <div class="hero-banner-inner">
+          <p class="eyebrow">Choice menu importer</p>
+          <h1>Sync marketplace menus into Choice</h1>
+          <p class="subtitle">Paste marketplace links and any run notes into one field, then submit the import from one clean deployable interface.</p>
+        </div>
+      </header>
+
+      <div class="workspace">
+
+        <aside class="input-panel">
+          <form id="sync-form" action="/api/import" method="post">
+            <label for="prompt">URLs and instructions</label>
+            <textarea id="prompt" name="prompt" placeholder="Paste one or more marketplace URLs and any instructions here.&#10;&#10;Example:&#10;https://www.ubereats.com/...&#10;Import this menu for the English Choice menu." required></textarea>
+
+            <div class="controls">
+              <button id="submit-button" type="submit">Submit</button>
+            </div>
+
+            <div id="progress-panel" class="progress-panel" hidden>
+              <div class="progress-header">
+                <span id="progress-title">Preparing request</span>
+                <span id="progress-count">0%</span>
+              </div>
+              <div class="progress-track">
+                <span id="progress-bar"></span>
+              </div>
+              <ol id="progress-steps" class="progress-steps"></ol>
+            </div>
+          </form>
+        </aside>
+
+        <section id="results" class="output-panel" aria-live="polite">
+          <p class="output-empty">Results will appear here after you submit.</p>
+        </section>
+
+      </div>
+    </main>
+
+    <script type="module" src="/app.js?v=20260524-2"></script>
+  </body>
+</html>

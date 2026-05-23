@@ -45,6 +45,7 @@ test('detects Pyszne/Just Eat URLs', () => {
   assert.equal(detectMarketplace('https://www.just-eat.co.uk/menu/test-restaurant'), 'pyszne');
 });
 
-test('rejects unsupported URLs', () => {
-  assert.throws(() => detectMarketplace('https://example.com/restaurant/foo'), /Unsupported marketplace/);
+test('falls back to generic for unknown hosts', () => {
+  assert.equal(detectMarketplace('https://example.com/restaurant/foo'), 'generic');
+  assert.equal(detectMarketplace('https://my-restaurant.com/menu'), 'generic');
 });

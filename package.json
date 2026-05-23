@@ -5,8 +5,11 @@
   "type": "module",
   "description": "Import marketplace restaurant menus into Choice using POST /menu/:language/full.",
   "scripts": {
-    "start": "node src/cli.js",
+    "start": "node src/server.js",
+    "cli": "node src/cli.js",
+    "ai-menu": "node src/ai-menu-assistant.js",
     "dry-run": "node src/cli.js --dry-run",
+    "build": "node --check src/server.js && node --check src/cli.js && node --check src/ai-menu-assistant.js && node --check public/app.js",
     "test": "node --test"
   },
   "engines": {

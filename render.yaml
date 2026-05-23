@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: sync-menu-from-marketplace
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DRY_RUN
+        value: "true"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5-mini
+      - key: CHOICE_API_BASE_URL
+        sync: false
+      - key: CHOICE_BEARER_TOKEN
+        sync: false
+      - key: CHOICE_MENU_LANGUAGE
+        value: en
+      - key: CHOICE_MENU_CHECK_PATH
+        value: /menu/en/full/list

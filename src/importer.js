@@ -7,6 +7,8 @@ import { parseGlovoMenu } from './marketplaces/glovo.js';
 import { parsePyszneMenu } from './marketplaces/pyszne.js';
 import { parseUberMenu } from './marketplaces/uber.js';
 import { parseWoltMenu } from './marketplaces/wolt.js';
+import { parseExpirenzaMenu } from './marketplaces/expirenza.js';
+import { parseGenericMenu } from './marketplaces/generic.js';
 import { mapToChoiceFullMenu } from './mapper/choice-full-menu.js';
 import { AppError } from './errors.js';
 
@@ -17,6 +19,8 @@ const parsers = {
   pyszne: parsePyszneMenu,
   uber: parseUberMenu,
   wolt: parseWoltMenu,
+  expirenza: parseExpirenzaMenu,
+  generic: parseGenericMenu,
 };
 
 export async function runImport({ marketplaceUrl, outputPath, config, logger }) {

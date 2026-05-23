@@ -17,5 +17,6 @@ export function detectMarketplace(input) {
   if (hostname === 'just-eat.co.uk' || hostname === 'www.just-eat.co.uk' || hostname.endsWith('.just-eat.co.uk')) return 'pyszne';
   if (hostname === 'takeaway.com' || hostname === 'www.takeaway.com' || hostname.endsWith('.takeaway.com')) return 'pyszne';
   if (hostname === 'ubereats.com' || hostname === 'www.ubereats.com' || hostname.endsWith('.ubereats.com')) return 'uber';
-  throw new AppError(`Unsupported marketplace host: ${url.hostname}`, 'UNSUPPORTED_MARKETPLACE');
+  if (hostname === 'expz.menu' || hostname === 'www.expz.menu') return 'expirenza';
+  return 'generic';
 }

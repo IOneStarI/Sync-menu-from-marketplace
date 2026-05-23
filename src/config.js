@@ -21,7 +21,7 @@ function parseDotEnv(content) {
   return env;
 }
 
-function readLocalEnv() {
+export function readLocalEnv() {
   const envPath = path.resolve(process.cwd(), '.env');
   if (!fs.existsSync(envPath)) return {};
   return parseDotEnv(fs.readFileSync(envPath, 'utf8'));
