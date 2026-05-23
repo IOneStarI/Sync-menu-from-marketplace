@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sync Menu From Marketplace"
+  short_description: "Sync marketplace menus into local systems"
+  default_prompt: "Use $sync-menu-from-marketplace to sync marketplace menu changes into the local Choice menu system."
